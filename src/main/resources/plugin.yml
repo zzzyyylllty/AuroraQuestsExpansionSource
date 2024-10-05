@@ -1,0 +1,17 @@
+name: AuroraQuestsExpansion
+version: '${project.version}'
+main: io.github.zzzyyylllty.auroraquestsexpansion.AuroraQuestsExpansion
+softdepend: [Aurora,AuroraQuests]
+api-version: '1.13'
+author: AkaCandyKAngel
+commands:
+  auroraquestsexpansion:
+    description: AuroraQuests Exception
+    usage: /auroraquestsexpansion [QuestPool] [Quest] [Action] <Optional:Player>
+    permission: kangelcore.auroraquestsexpansion
+    aliases: [aqakt, aqexp]
+
+permissions:
+  auroraquestsexpansion.command:
+    description: "Use /auroraquestsexpansion command"
+    default: op
