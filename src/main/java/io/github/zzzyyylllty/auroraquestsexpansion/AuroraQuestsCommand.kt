@@ -15,39 +15,34 @@ class AuroraQuestsCommand : TabExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
-        if (args == null || args.size < 2) return false
+        if (args == null || args.size < 3) {
+            sendRefatorMessages("<gradient:red:dark_red>Usage: /auroraquestsexpansion [QuestPool] [Quest] [Action] <Optional:Player>",sender)
+            return false
+        }
 
         val pool = manager.getQuestPool(args[0]) ?: run {
-            sendRefatorMessages("<gradient:red:dark_red>执行失败: 未找到任务池 ${args[0]}",sender)
+            sendRefatorMessages("<gradient:red:dark_red>Execution Failed: Quest Pool Not Found ${args[0]}",sender)
             return false
         }
         val quest = pool.getQuest(args[1]) ?: run {
-            sendRefatorMessages("<gradient:red:dark_red>执行失败: 未找到任务 ${args[0]} - ${args[1]}",sender)
+            sendRefatorMessages("<gradient:red:dark_red>Execution Failed: Quest Not Found ${args[0]} - ${args[1]}",sender)
             return false
         }
 
         val player = Bukkit.getPlayer(if (args.size >= 4) args[3] else sender.name) ?: run {
-            sendRefatorMessages("<gradient:red:dark_red>执行失败: 未找到玩家 ${Bukkit.getPlayer(if (args.size >= 4) args[3] else sender.name)}",sender)
+            sendRefatorMessages("<gradient:red:dark_red>Execution Failed: Player Not Found ${Bukkit.getPlayer(if (args.size >= 4) args[3] else sender.name)}",sender)
             return false
         }
 
-        if (args[1] == "#MODIFY_POOL") {
-            when (args[2]) {
-                "COMPLETE" -> quest.complete(player)
-                "TRYSTART" -> quest.tryStart(player)
-                "FORCESTART" -> quest.forceStart(player)
-            }
-        } else {
             when (args[2]) {
                 "COMPLETE" -> quest.complete(player)
                 "TRYSTART" -> quest.tryStart(player)
                 "FORCESTART" -> quest.forceStart(player)
                 "TAKEITEMS" -> quest.tryTakeItems(player)
             }
-        }
 
 
-        return false
+        return true
     }
 
     override fun onTabComplete(

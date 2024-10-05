@@ -31,13 +31,11 @@ class AuroraQuestsExpansion : JavaPlugin() {
         sendConsoleMessages("<green>AuroraQuestsExpansion NOW STARTING...")
         sendConsoleMessages("<gradient:aqua:green:white>POWERED BY AKACANDYKANGEL,LIMINAL SKYLINE TEAM")
 
-/*
         if (Bukkit.getPluginManager().getPlugin("AuroraQuests") == null) {
             sendConsoleMessages("<gradient:dark_purple:red:yellow>COUNDN'T FOUND AURORAQUESTS. DISABLING... | 未找到AuroraQuests,正在禁用.")
             plugin.onDisable()
             return
         }
-*/
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             sendConsoleMessages("<gradient:aqua:green:white>Hooking to PAPI... | 挂钩到 PAPI")
