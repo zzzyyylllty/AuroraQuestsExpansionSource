@@ -1,7 +1,7 @@
 name: AuroraQuestsExpansion
 version: '${project.version}'
 main: io.github.zzzyyylllty.auroraquestsexpansion.AuroraQuestsExpansion
-softdepend: [Aurora,AuroraQuests]
+softdepend: [Aurora,AuroraQuests,CoinsEngine]
 api-version: '1.13'
 author: AkaCandyKAngel
 commands:

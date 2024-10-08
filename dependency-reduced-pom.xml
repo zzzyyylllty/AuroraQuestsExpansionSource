@@ -4,7 +4,7 @@
   <groupId>io.github.zzzyyylllty</groupId>
   <artifactId>AuroraQuestsExpansion</artifactId>
   <name>io.github.zzzyyylllty.auroraquestsexpansion.AuroraQuestsExpansion</name>
-  <version>1.0.1</version>
+  <version>1.0.3</version>
   <build>
     <resources>
       <resource>
@@ -165,6 +165,12 @@
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
       <version>1.20.4-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>su.nightexpress.coinsengine</groupId>
+      <artifactId>CoinsEngine</artifactId>
+      <version>2.3.4</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
