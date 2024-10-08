@@ -1,7 +1,7 @@
-
+package io.github.zzzyyylllty.auroraquestsexpansion.rewards
 import gg.auroramc.aurora.api.message.Placeholder
 import gg.auroramc.aurora.api.reward.NumberReward
-import org.bukkit.Bukkit
+import io.github.zzzyyylllty.auroraquestsexpansion.AuroraQuestsExpansion.GlobalVars.plugin
 import org.bukkit.configuration.ConfigurationSection
 import org.bukkit.entity.Player
 import su.nightexpress.coinsengine.api.CoinsEngineAPI
@@ -18,12 +18,12 @@ class CoinsEngineReward : NumberReward() {
         val amount1 = amount
 
         if (currency1 == null || amount1 == null) run {
-            Bukkit.getLogger().log(Level.WARNING, "Amount or Currency may not be null.")
+            plugin.log(Level.WARNING, "Amount or Currency may not be null.")
             return
         }
 
         val currencyInst = CoinsEngineAPI.getCurrency(currency1) ?: run {
-            Bukkit.getLogger().log(Level.WARNING, "Currency $currency not exist.")
+            plugin.log(Level.WARNING, "Currency $currency not exist.")
             return
         }
 
@@ -34,7 +34,7 @@ class CoinsEngineReward : NumberReward() {
         super.init(args)
         currency = args.getString("currency", null) // 获取配置文件项
         amount = args.getString("amount", null)?.toDouble() ?: run {
-            Bukkit.getLogger().log(Level.WARNING, "Amount may not be null.")
+            plugin.log(Level.WARNING, "Amount may not be null.")
             return
         }
 

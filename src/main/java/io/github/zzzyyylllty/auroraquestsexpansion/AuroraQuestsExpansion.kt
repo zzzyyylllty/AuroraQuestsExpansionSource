@@ -1,10 +1,10 @@
 package io.github.zzzyyylllty.auroraquestsexpansion
 
 
-import CoinsEngineReward
 import gg.auroramc.aurora.api.util.NamespacedId
 import gg.auroramc.quests.api.AuroraQuestsProvider
 import io.github.zzzyyylllty.auroraquestsexpansion.AuroraQuests.task.sendConsoleMessages
+import io.github.zzzyyylllty.auroraquestsexpansion.rewards.CoinsEngineReward
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Level
